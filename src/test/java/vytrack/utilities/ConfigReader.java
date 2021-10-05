@@ -15,7 +15,7 @@ public class ConfigReader {
     static {
         //#3- Get the path and open the file
         try {
-            FileInputStream in = new FileInputStream("config.properties");
+            FileInputStream in = new FileInputStream("configuration.properties");
 
             //#4- Load the opened file into properties object
             properties.load(in);
@@ -24,7 +24,7 @@ public class ConfigReader {
             in.close();
 
         } catch (IOException e) {
-            System.out.println("Error occurred while reading config.properties " + e.getMessage()) ;
+            System.out.println("Error occurred while reading configuration.properties " + e.getMessage()) ;
         }
     }
 
