@@ -1,9 +1,10 @@
 package vytrack.pages;
 
-import com.sun.prism.impl.shape.BasicRoundRectRep;
+
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
@@ -42,6 +43,15 @@ public class VyTrackPOM {
 
     @FindBy(xpath = "//li/a[.='Logout']")
     private WebElement logOutOption;
+
+    @FindBy(xpath = "/html/body/div[2]/div[2]/header/div[2]/ul/li[1]/a/span")
+    private WebElement fleet;
+
+    @FindBy(xpath = "//li/a/span[.='Vehicle Odometer']")
+    private WebElement vodbtt;
+
+
+
 
     public VyTrackPOM(){
 
@@ -92,6 +102,17 @@ public class VyTrackPOM {
 
         logOutOption.click();
     }
+
+    public void createvod(){
+
+        fleet.click();
+
+        BrowserUtil.waitFor(2);
+
+       vodbtt.click();
+
+    }
+
 
 
 
