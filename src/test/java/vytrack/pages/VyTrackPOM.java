@@ -57,14 +57,16 @@ public class VyTrackPOM {
     public void login(String userName){
 
         userNameBox.sendKeys(userName);
+        BrowserUtil.waitFor(3);
 
         passWordBox.sendKeys(ConfigReader.read("password"));
 
         rememberMeCheckBox.click();
 
-        BrowserUtil.waitFor(1);
+        BrowserUtil.waitFor(2);
 
         loginButton.click();
+        BrowserUtil.waitFor(2);
 
 
     }
