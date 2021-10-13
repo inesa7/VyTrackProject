@@ -1,19 +1,14 @@
 package vytrack.pages;
 
-//import com.sun.prism.impl.shape.BasicRoundRectRep;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.Select;
 import vytrack.utilities.BrowserUtil;
-import vytrack.utilities.ConfigReader;
+import vytrack.utilities.ConfigurationReader;
 import vytrack.utilities.Driver;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 // DO NOT TOUCH....IT WILL BITE!!
 
@@ -43,6 +38,15 @@ public class VyTrackPOM {
     @FindBy(xpath = "//li/a[.='Logout']")
     private WebElement logOutOption;
 
+    @FindBy(xpath = "/html/body/div[2]/div[2]/header/div[2]/ul/li[1]/a/span")
+    private WebElement fleet;
+
+    @FindBy(xpath = "//li/a/span[.='Vehicle Odometer']")
+    private WebElement vodbtt;
+
+
+
+
     public VyTrackPOM(){
 
         PageFactory.initElements(Driver.getDriver(),this);
@@ -50,21 +54,23 @@ public class VyTrackPOM {
 
     public void goTo(){
 
-        Driver.getDriver().navigate().to(ConfigReader.read("VyTracProjectUrl"));
+        Driver.getDriver().navigate().to(ConfigurationReader.read("VyTracProjectUrl"));
 
     }
 
     public void login(String userName){
 
         userNameBox.sendKeys(userName);
+        BrowserUtil.waitFor(3);
 
-        passWordBox.sendKeys(ConfigReader.read("password"));
+        passWordBox.sendKeys(ConfigurationReader.read("password"));
 
         rememberMeCheckBox.click();
 
-        BrowserUtil.waitFor(1);
+        BrowserUtil.waitFor(2);
 
         loginButton.click();
+        BrowserUtil.waitFor(2);
 
 
     }
@@ -92,6 +98,17 @@ public class VyTrackPOM {
 
         logOutOption.click();
     }
+
+    public void createvod(){
+
+        fleet.click();
+
+        BrowserUtil.waitFor(2);
+
+       vodbtt.click();
+
+    }
+
 
 
 

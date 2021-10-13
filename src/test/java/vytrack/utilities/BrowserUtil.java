@@ -2,8 +2,10 @@ package vytrack.utilities;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.TimeoutException;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import vytrack.pages.AllCarsPOM;
 
 public class BrowserUtil {
 
@@ -57,6 +59,20 @@ public class BrowserUtil {
          return result ;
 
      }
+
+    public static boolean waitForElementLocated(WebElement element){
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(),5);
+
+        boolean result=false;
+        try {
+            wait.until(ExpectedConditions.visibilityOf(element));
+            result=true;
+        }catch (TimeoutException e){
+            System.err.println("This button does not exist");
+        }
+
+        return result;
+    }
 
 
 

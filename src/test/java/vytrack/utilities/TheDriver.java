@@ -3,18 +3,20 @@ package vytrack.utilities;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import vytrack.utilities.ConfigReader;
 
 /**
  * We wanted to have a class with that only return Single object
  * no matter how many times you asked for object
  * so we are creating this class with technic we learned from Singleton pattern
  */
-public class Driver {
+public class TheDriver {
 
     private static WebDriver obj ;
 
-    private Driver(){ }// block creating an object
+    private TheDriver(){ }// block creating an object
 
     /**
      * Return obj with only one WebDriver instance
@@ -22,7 +24,7 @@ public class Driver {
      */
     public static WebDriver getDriver(){
         // reading browser type from config.properties file using utility
-        String browserName = ConfigurationReader.read("browser") ;
+        String browserName = ConfigReader.read("browser") ;
 
         if(obj == null){
 
@@ -31,9 +33,9 @@ public class Driver {
                     WebDriverManager.chromedriver().setup();
                     obj = new ChromeDriver();
                     break;
-                case "firefox" :
-                    WebDriverManager.firefoxdriver().setup();
-                    obj = new FirefoxDriver();
+                case "edge" :
+                    WebDriverManager.edgedriver().setup();
+                    obj = new EdgeDriver();
                     break;
                 // other browsers omitted
                 default:
