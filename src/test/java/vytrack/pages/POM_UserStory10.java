@@ -73,32 +73,6 @@ public class POM_UserStory10 {
         driver.close();
 
 
-
-
-/*
-        WebDriver driver = new ChromeDriver();
-        driver.get("https://qa3.vytrack.com/");
-        driver.findElement(By.cssSelector("body")).sendKeys(Keys.CONTROL +"t");
-        System.out.println(driver.getTitle());
-        driver.get("https://doc.oroinc.com/");
-        driver.findElement(By.cssSelector("body")).sendKeys(Keys.CONTROL + "\t");
-        System.out.println(driver.getTitle());
-
-*/
-        //Assertions.assertEquals("Welcome to Oro Documentation", Driver.getDriver().getTitle());
-
-        //oro.logOut();
-
-        //oroDocsAccess.isDisplayed();
-/*
-        WebElement title = Driver.getDriver().findElement(By.xpath("/html/head/title"));
-
-        String expectedMessage = "Welcome to Oro Documentation";
-        String actualMessage = "";
-
-        Assertions.assertEquals(expectedMessage,title.getText());
- */
-
     }
 
 }
