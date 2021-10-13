@@ -60,7 +60,7 @@ public class BrowserUtil {
 
      }
 
-    public static  boolean waitForElementLocated(WebElement element){
+    public static boolean waitForElementLocated(WebElement element){
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(),5);
 
         boolean result=false;

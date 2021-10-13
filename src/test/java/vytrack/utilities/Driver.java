@@ -22,7 +22,7 @@ public class Driver {
      */
     public static WebDriver getDriver(){
         // reading browser type from config.properties file using utility
-        String browserName = ConfigReader.read("browser") ;
+        String browserName = ConfigurationReader.read("browser") ;
 
         if(obj == null){
 

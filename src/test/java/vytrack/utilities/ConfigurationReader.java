@@ -4,7 +4,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
 
-public class ConfigReader {
+public class ConfigurationReader {
 
     //In this class we will implement the repeated steps of reading
     // from configuration.properties file
