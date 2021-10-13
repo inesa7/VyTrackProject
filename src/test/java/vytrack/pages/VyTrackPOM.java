@@ -7,14 +7,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.Select;
 import vytrack.utilities.BrowserUtil;
-import vytrack.utilities.ConfigReader;
+import vytrack.utilities.ConfigurationReader;
 import vytrack.utilities.Driver;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 // DO NOT TOUCH....IT WILL BITE!!
 
@@ -60,7 +55,7 @@ public class VyTrackPOM {
 
     public void goTo(){
 
-        Driver.getDriver().navigate().to(ConfigReader.read("VyTracProjectUrl"));
+        Driver.getDriver().navigate().to(ConfigurationReader.read("VyTracProjectUrl"));
 
     }
 
@@ -68,7 +63,7 @@ public class VyTrackPOM {
 
         userNameBox.sendKeys(userName);
 
-        passWordBox.sendKeys(ConfigReader.read("password"));
+        passWordBox.sendKeys(ConfigurationReader.read("password"));
 
         rememberMeCheckBox.click();
 
